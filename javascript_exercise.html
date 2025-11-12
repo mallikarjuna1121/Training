@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/javascript_exercise.css">
+</head>
+<body>
+        <div class="body">
+            <div class="header">
+            <h3 id="rname"></h3>
+            <div>
+                <a href="">Linkedin | </a>
+                <a href="">Github | </a>
+                <a href="">Leetcode</a>
+            </div>
+            </div>
+            <div class="main">
+            <div class="left">
+                <h1>TOPICS</h1>
+                <ul>
+                    <li>Objective</li>
+                    <li>Education</li>
+                    <li>Experience</li>
+                    <li>Internships</li>
+                    <li>Skills</li>
+                    <li>Projects</li>
+                    <li>Certifications</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h3>Objective</h3>
+                <p>To obtain a challenging position in a reputable organization 
+                    where I can utilize my skills and grow professionally while 
+                    contributing to the success of the company.
+                </p>
+                <h3>Education</h3>
+                <p class="sty">
+                Bachelor of Technology (B.Tech) <br>
+                Electronics and Communication Engineering <br>
+                MITS, Madanapalle
+                Graduation Year: 2025
+                </p>
+                <h3>Experience</h3>
+                <p class="sty"> 
+                <span>Intern-Software Engineer</span><br>
+                Moolya Software Testing Pvt Ltd <br>
+                Oct 2025-Present
+                <ul>
+                    <li>Currently working as a backend developer intern.</li>
+                   <li>Learning and assisting in backend development tasks.</li>
+                   <li>Gaining hands-on experience in real-time projects.</li>
+                </ul>
+            </p>
+                <h3>Internships</h3>
+                <ul>
+                    <li>Backend Development | Intern Certify(virtual)</li>
+                    <li>Web Development | Codtech IT Solutions(virtual)</li>
+                </ul>
+                <h3>Skills</h3>
+                <div class="skill">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JAVA</li>
+                    <li>PYTHON</li>
+                </ul>
+                <ul>
+                    <li>JAVA SCRIPT</li>
+                    <li>SQL</li>
+                    <li>JDBC</li>
+                    <li>SERVLETS</li>
+                </ul>
+                </div>
+                
+                <h3>Projects</h3>
+                <span>Student Management System</span>
+                <p>-Developed CRUD-based student management system. Integrated Oracle DB for data persistence.</p>
+                <span>Antenna Design</span>
+                <p>-Simulated and optimized antenna design for gain and bandwidth. Applied RF principles in design and testing.</p>
+                <h3 class="cert">Certifications</h3>
+                <ul>
+                    <li>OOP in java(COURSERA)</li>
+                    <li>Java Script Certification(CISCO)</li>
+                    <li>Google Data Analytics(COURSERA)</li>
+                </ul>
+                <div class="extra">
+
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer">
+            <pre>Phone: +91 <span id="rphone"></span>
+email: sunkemallikarjuna1121@gmail.com</pre>
+        </div>
+        </section>
+    <section class="forms">
+    <div class="form">
+        <fieldset>
+            <legend>max</legend>
+            <form action="">
+                <table>
+                    <tr>
+                        <td><label for="">FirstNumber:</label></td>
+                        <td><input type="text" name="" id="num1" placeholder="enter first number"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">SecondNumber:</label></td>
+                        <td><input type="text" name="" id="num2" placeholder="enter second number"></td>
+                    </tr>
+                </table>
+            </form>
+            <button onclick="max()">save</button><br><span id="res1"></span>
+        </fieldset>
+    </div>
+    <div class="form">
+        <fieldset>
+            <legend>reverse</legend>
+            <form action="">
+                <table>
+                    <tr>
+                        <td><label for="">String</label></td>
+                        <td><input type="text" id="str" placeholder="enter string"></td>
+                    </tr>
+                </table>
+            </form>
+            <button onclick="rev()">save</button><br><span id="res2"></span>
+        </fieldset>
+    </div>
+    <div class="form">
+        <fieldset>
+            <legend>long</legend>
+            <form action="">
+                <table>
+                    <tr>
+                        <td><label for="">String</label></td>
+                        <td><input type="text" id="longest" placeholder="enter string"></td>
+                    </tr>
+                </table>
+            </form>
+            <button onclick="longest()">save</button><br><span id="res3"></span>
+        </fieldset>
+    </div>
+    <div class="form">
+        <fieldset>
+            <legend>cookie</legend>
+            <form action="">
+                <table>
+                    <tr>
+                        <td><label for="">Name</label></td>
+                        <td><input type="text" id="name" placeholder="enter name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Phone</label></td>
+                        <td><input type="text" id="phone" placeholder="enter phone"></td>
+                    </tr>
+                </table>
+            </form>
+            <button onclick="cook()">save</button></span>
+        </fieldset>
+    </div>
+    </section>
+    <script>
+        if(document.cookie!=null)
+        {
+            let words=document.cookie.split(";");
+            for(let word of words)
+            {
+                word=word.trim();
+                if(word.startsWith("name=")) document.getElementById("rname").innerText=word.substring(5,word.length);
+                if(word.startsWith("phon=")) document.getElementById("rphone").innerText=word.substring(5,word.length);
+            }
+        }
+        function max(a=Number(document.getElementById("num1").value),b=Number(document.getElementById("num2").value))
+        {
+            if(a>b) document.getElementById("res1").innerHTML=a;
+            else document.getElementById("res1").innerHTML=b;
+
+        }
+        function rev(str=document.getElementById("str").value)
+        {
+            document.getElementById("res2").innerText=str.split("").reverse().join("");
+        }
+        function longest(str=document.getElementById("longest").value)
+        {
+            let a=str.trim().split(",");
+            let max="";
+            for(let word of a)
+            {
+                if(max.length<word.length) max=word;
+            }
+            document.getElementById("res3").innerText=max;
+        }
+        function cook()
+        {
+            document.cookie=`name=${document.getElementById("name").value};`;
+            document.cookie=`phon=${document.getElementById("phone").value};`;
+            let words=document.cookie.split(";");
+            for(let word of words)
+            {
+                word=word.trim();
+                if(word.startsWith("name=")) document.getElementById("rname").innerText=word.substring(5,word.length);
+                if(word.startsWith("phon=")) document.getElementById("rphone").innerText=word.substring(5,word.length);
+            }
+        }
+    </script>
+</body>
+</html>
